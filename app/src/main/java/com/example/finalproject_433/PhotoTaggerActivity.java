@@ -16,6 +16,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -78,6 +79,10 @@ public class PhotoTaggerActivity extends AppCompatActivity {
 
         ArrayList<ListItem> latestImages = showLatestImages();
         adapter.updateData(latestImages);
+
+//        CheckBox checkBox = findViewById(R.id.include_image);
+//        checkBox.setVisibility(View.GONE); // Make CheckBox invisible
+
 
         Button backButton = findViewById(R.id.btnBack);
         backButton.setOnClickListener(v -> {

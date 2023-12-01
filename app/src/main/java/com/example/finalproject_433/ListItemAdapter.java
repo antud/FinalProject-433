@@ -20,7 +20,8 @@ public class ListItemAdapter extends ArrayAdapter<ListItem> {
 
     private OnItemCheckListener onItemCheckListener;
     private ArrayList<ListItem> dataList;
-    int count = 0;
+    private int count = 0;
+    private boolean showCheckbox = false;
 
     ListItemAdapter(Context context, int resource, ArrayList<ListItem> objects) {
         super(context, resource, objects);
@@ -41,6 +42,8 @@ public class ListItemAdapter extends ArrayAdapter<ListItem> {
         ImageView currentImage = convertView.findViewById(R.id.image_in_list);
         TextView currentName = convertView.findViewById(R.id.text_in_list);
         CheckBox checkBox = convertView.findViewById(R.id.include_image);
+
+        checkBox.setVisibility(showCheckbox ? View.VISIBLE : View.GONE);
 
         if (currentItem.getImageResource() != 0) {
             currentImage.setImageResource(currentItem.getImageResource());
@@ -85,6 +88,10 @@ public class ListItemAdapter extends ArrayAdapter<ListItem> {
         dataList.clear();
         dataList.addAll(newData);
         notifyDataSetChanged();
+    }
+
+    public void setShowCheckbox(boolean isVisible) {
+        showCheckbox = isVisible;
     }
 
     public ArrayList<ListItem> getDataList() {

@@ -66,6 +66,7 @@ public class StoryTellerActivity extends AppCompatActivity {
 
         listData = new ArrayList<>();
         adapter = new ListItemAdapter(this, R.layout.list_item, listData);
+        adapter.setShowCheckbox(true);
 
         lv = findViewById(R.id.story_image_list);
         lv.setAdapter(adapter);
@@ -106,29 +107,12 @@ public class StoryTellerActivity extends AppCompatActivity {
         });
     }
 
-
-    //    private void updateSelectedTagText() {
-//        selectedTags = new StringBuilder();
-//        for (ListItem listItem : adapter.getDataList()) {
-//            if (listItem.isChecked()) {
-//                String fullTagText = listItem.getTagText().toString();
-//                String[] splitTags = fullTagText.split("\\s+[A-Za-z]{3}\\s+\\d{2}\\s+\\d{4},\\s+\\d{1,2}\\s+[A|P]M", 2);
-//                String tagsOnly = splitTags[0].trim();
-//
-//                if (selectedTags.length() > 0) {
-//                    selectedTags.append(", ");
-//                }
-//                selectedTags.append(tagsOnly);
-//            }
-//        }
-//        selectedStoryTags.setText(selectedTags.toString());
-//    }
     private void updateSelectedTagText() {
         Set<String> uniqueTags = new HashSet<>();
         for (ListItem listItem : adapter.getDataList()) {
             if (listItem.isChecked()) {
                 String fullTagText = listItem.getTagText().toString();
-                String[] splitTags = fullTagText.split("\\s+[A-Za-z]{3}\\s+\\d{2}\\s+\\d{4},\\s+\\d{1,2}\\s+[A|P]M", 2);
+                String[] splitTags = fullTagText.split("\\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \\d{1,2} \\d{4}, \\d{1,2} [APap][Mm]\\b", 2);
                 String tagsOnly = splitTags[0].trim();
                 String[] tags = tagsOnly.split(",\\s*");
 

@@ -272,6 +272,8 @@ public class SketchTaggerActivity extends AppCompatActivity {
         cv2.put("TAGS", tagStrings);
         cv2.put("TYPE", "sketch");
         bigDb.insert("BOTH", null, cv2);
+
+        adapter.updateData(showLatestImages());
     }
 
     public void onClear(View view) {

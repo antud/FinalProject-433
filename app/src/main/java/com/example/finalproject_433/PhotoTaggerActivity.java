@@ -16,7 +16,6 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -220,6 +219,8 @@ public class PhotoTaggerActivity extends AppCompatActivity {
 
         cv.put("TYPE", "photo");
         bigDb.insert("BOTH", null, cv);
+
+        adapter.updateData(showLatestImages());
     }
 
     // on startup, show the latest images, not sure if this needs to be capped at all since we can scroll through the list?

@@ -40,7 +40,7 @@ public class MyDrawingArea extends View {
         Paint p = new Paint();
         p.setColor(Color.BLACK);
         p.setStyle(Paint.Style.STROKE);
-        p.setStrokeWidth(15f);
+        p.setStrokeWidth(20f);
 
         canvas.drawPath(path, p);
         invalidate();

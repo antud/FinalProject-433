@@ -1,5 +1,7 @@
 package com.example.finalproject_433;
 
+import static com.example.finalproject_433.Styling.applyButtonStyling;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -46,6 +48,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+
 public class PhotoTaggerActivity extends AppCompatActivity {
     private ArrayList<ListItem> listData;
     SQLiteDatabase db;
@@ -79,11 +82,22 @@ public class PhotoTaggerActivity extends AppCompatActivity {
         ArrayList<ListItem> latestImages = showLatestImages();
         adapter.updateData(latestImages);
 
-//        CheckBox checkBox = findViewById(R.id.include_image);
-//        checkBox.setVisibility(View.GONE); // Make CheckBox invisible
-
-
         Button backButton = findViewById(R.id.btnBack);
+        Button cameraButton = findViewById(R.id.camera_button);
+        Button saveButton = findViewById(R.id.save_camera_image_button);
+        Button findButton = findViewById(R.id.search_for_tags);
+
+        ArrayList<Button> buttons = new ArrayList<>();
+        buttons.add(cameraButton);
+        buttons.add(saveButton);
+        buttons.add(findButton);
+        buttons.add(backButton);
+
+        //doing it like this in case we add more buttons
+        for (Button button : buttons) {
+            applyButtonStyling(button);
+        }
+
         backButton.setOnClickListener(v -> {
             Intent intent = new Intent(PhotoTaggerActivity.this, MainActivity.class);
             startActivity(intent);

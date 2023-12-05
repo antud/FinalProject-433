@@ -1,5 +1,7 @@
 package com.example.finalproject_433;
 
+import static com.example.finalproject_433.Styling.applyButtonStyling;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -79,10 +81,28 @@ public class SketchTaggerActivity extends AppCompatActivity {
         adapter.updateData(latestImages);
 
         Button backButton = findViewById(R.id.btnBack);
+        Button clearButton = findViewById(R.id.clear_button);
+        Button classifyButton = findViewById(R.id.classify_button);
+        Button saveButton = findViewById(R.id.save_camera_image_button);
+        Button findButton = findViewById(R.id.search_for_tags);
+
+        ArrayList<Button> buttons = new ArrayList<>();
+        buttons.add(clearButton);
+        buttons.add(classifyButton);
+        buttons.add(saveButton);
+        buttons.add(findButton);
+        buttons.add(backButton);
+
+        //doing it like this in case we add more buttons
+        for (Button button : buttons) {
+            applyButtonStyling(button);
+        }
+
         backButton.setOnClickListener(v -> {
             Intent intent = new Intent(SketchTaggerActivity.this, MainActivity.class);
             startActivity(intent);
         });
+
     }
 
     public ArrayList<ListItem> showLatestImages() {

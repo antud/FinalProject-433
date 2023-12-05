@@ -1,5 +1,7 @@
 package com.example.finalproject_433;
 
+import static com.example.finalproject_433.Styling.applyButtonStyling;
+
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -85,6 +87,19 @@ public class StoryTellerActivity extends AppCompatActivity {
         adapter.updateData(latestImages);
 
         Button backButton = findViewById(R.id.btnBack);
+        Button findButton = findViewById(R.id.find_button);
+        Button storyButton = findViewById(R.id.story_submit);
+
+        ArrayList<Button> buttons = new ArrayList<>();
+        buttons.add(backButton);
+        buttons.add(findButton);
+        buttons.add(storyButton);
+
+        for (Button button : buttons) {
+            applyButtonStyling(button);
+
+        }
+
         backButton.setOnClickListener(v -> {
             Intent intent = new Intent(StoryTellerActivity.this, MainActivity.class);
             startActivity(intent);

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/lightpurpleiphonea7f9vyp1ml9ree76"
     android:orientation="vertical">
 
     <com.example.finalproject_433.MyDrawingArea
@@ -21,7 +22,8 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginLeft="10pt"
-            android:text="Tags: " />
+            android:text="Tags: "
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/generated_tags"
@@ -90,7 +92,8 @@
             android:layout_marginLeft="10pt"
             android:layout_weight="85"
             android:autofillHints="tags"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/black" />
     </LinearLayout>
 
     <ImageView
@@ -103,17 +106,10 @@
         android:layout_width="match_parent"
         android:layout_height="225dp" />
 
-    <!--    <com.example.a4.MyDrawingArea-->
-    <!--        android:id="@+id/blank_drawing_area"-->
-    <!--        android:layout_width="1dp"-->
-    <!--        android:layout_height="1dp"-->
-    <!--        android:scaleType="fitCenter" />-->
-
     <Button
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Back" />
-
 </LinearLayout>

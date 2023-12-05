@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/p7520bc4dbf53a233224248a204758154"
     android:orientation="vertical">
 
     <ImageView
@@ -21,14 +22,16 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginLeft="10pt"
-            android:text="Tags: " />
+            android:text="Tags: "
+            android:textColor="@color/black" />
 
         <EditText
             android:id="@+id/generated_tags"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_marginLeft="10pt"
-            android:text="Please take a picture" />
+            android:text="Please take a picture"
+            android:textColor="@color/black" />
     </LinearLayout>
 
     <LinearLayout
@@ -79,7 +82,8 @@
             android:layout_marginLeft="10pt"
             android:layout_weight="85"
             android:autofillHints="tags"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/black" />
     </LinearLayout>
 
     <ListView

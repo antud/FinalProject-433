@@ -7,12 +7,21 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="320dp"
+        android:text="Please choose an activity!"
+        android:textColor="@color/white"
+        android:textSize="25dp" />
+
     <Button
         android:id="@+id/photoTagger"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="30dp"
         android:text="Photo Tagger" />
 
     <Button
